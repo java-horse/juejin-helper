@@ -62,7 +62,7 @@ const main = async () => {
   growth.freeCount = lotteryConfig.free_count || 0
 
   // 尝试免费抽奖一次
-  if(freeDrawed && growth.freeCount > 0) {
+  if(growth.freeDrawed && growth.freeCount > 0) {
     const drawRes = await juejin.draw()
     console.log('freeDraw: ' + drawRes)
   }
