@@ -58,6 +58,11 @@ class Api {
     return this.http.get(`/growth_api/v1/lottery_config/get?aid=`)
   }
 
+  // 抽奖
+  draw() {
+    retrun this.http.get(`/growth_api/v1/lottery/draw?aid=`)
+  }
+
   /**
    * @desc 当前矿石数
    * @returns {Promise<*>}
