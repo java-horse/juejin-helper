@@ -62,9 +62,9 @@ const main = async () => {
   growth.freeCount = lotteryConfig.free_count || 0
 
   // 尝试免费抽奖一次
-  if(growth.freeDrawed && growth.freeCount > 0) {
-    const drawRes = await juejin.draw()
-  }
+  // if(growth.freeDrawed && growth.freeCount > 0) {
+  //   const drawRes = await juejin.draw()
+  // }
 
   // 当前矿石数
   growth.sumPoint = await juejin.getCurrentPoint()
