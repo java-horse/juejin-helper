@@ -60,7 +60,7 @@ class Api {
 
   // 抽奖
   draw() {
-    retrun this.http.get(`/growth_api/v1/lottery/draw?aid=`)
+    return this.http.get(`/growth_api/v1/lottery/draw?aid=`)
   }
 
   /**
