@@ -64,6 +64,7 @@ const main = async () => {
   // 尝试免费抽奖一次
   if(growth.freeDrawed && growth.freeCount > 0) {
     const drawRes = await juejin.draw()
+    console.log(drawRes)
   }
 
   // 当前矿石数
