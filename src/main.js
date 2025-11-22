@@ -11,7 +11,7 @@ const growth = {
   sumCount: 0, // 累计签到天数
   luckyValue: 0, // 总幸运值
   freeCount: 0, // 免费抽奖次数
-  freeDrawed: false, // 是否免费抽奖
+  freeDrawed: true, // 是否免费抽奖
   lotteryName: '', // 奖品名称
   collectedBug: false, // 是否收集 Bug
   collectBugCount: 0, // 收集 Bug 的数量
@@ -60,6 +60,12 @@ const main = async () => {
   // 免费抽奖
   const lotteryConfig = await juejin.getLotteryConfig()
   growth.freeCount = lotteryConfig.free_count || 0
+
+  // 尝试免费抽奖一次
+  if(freeDrawed && growth.freeCount > 0) {
+    const drawRes = await juejin.draw()
+    console.log('freeDraw: ' + drawRes)
+  }
 
   // 当前矿石数
   growth.sumPoint = await juejin.getCurrentPoint()
